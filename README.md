@@ -42,7 +42,7 @@ The main script, `tmux-status.sh`, can be run with the `--strict`
 argument to force the script to exit if it cannot find all and run of
 the named scripts in `$SCRIPTS`:
 
-  tmux-config.sh ../config --strict
+    tmux-config.sh ../config --strict
 
 `$PREFIX` and `$SUFFIX` will only be added to the status bar if at
 least one status bar entry ran successfully.
