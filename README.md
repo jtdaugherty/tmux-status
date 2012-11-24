@@ -8,6 +8,11 @@ To use:
    variables as desired to produce the right mix of status bar
    attributes.  Variables are:
 
+  * `SCRIPTS` - space-separated list of script names, without ".sh"
+     extensions, referring to scripts in the `scripts/` directory.
+     These scripts will be run in the order listed and their output
+     will be used to build the status bar string.
+
   * `PREFIX` - this comes at the beginning of the status bar.
 
   * `SUFFIX` - this comes at the end of the status bar.
@@ -16,9 +21,6 @@ To use:
      each status bar entry.
 
   * `SEPARATOR` - the string inserted in between status bar entries.
-
-  * `SCRIPTS` - space-separated list of script names, without ".sh"
-     extensions, referring to scripts in the `scripts/` directory.
 
 2) Update your `tmux.conf` to set `status-right` as follows:
 
