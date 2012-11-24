@@ -41,7 +41,7 @@ Otherwise, the output of the script will be added to the status bar
 and separators will be added as appropriate.
 
 The main script, `tmux-status.sh`, can be run with the `--strict`
-argument to force the script to exit if it cannot find all and run of
+argument to force the script to exit if it cannot find and run all of
 the named scripts in `$SCRIPTS`:
 
     tmux-config.sh .../config --strict
