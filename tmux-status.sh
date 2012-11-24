@@ -39,16 +39,14 @@ function build_status {
 
         if ! script_exists $name
         then
-            error "No such script: $name"
-            exit 1
+            continue
         fi
 
         local pth=$(script_path $name)
 
         if [ ! -x $pth ]
         then
-            error "Script $pth not executable"
-            exit 1
+            continue
         fi
 
         local output=$($pth)
