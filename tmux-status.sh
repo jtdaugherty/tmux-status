@@ -4,11 +4,16 @@ set -e
 
 HERE=$(cd `dirname $0;`; pwd)
 
+STRICT=0
 SCRIPT_DIR=$HERE/scripts
 SEPARATOR=" "
 DEFAULT_ITEM_ATTR=""
 PREFIX=""
 SUFFIX=""
+
+function strict {
+    [ $STRICT == 1 ]
+}
 
 function script_path {
     local name=$1
@@ -39,14 +44,26 @@ function build_status {
 
         if ! script_exists $name
         then
-            continue
+            if strict
+            then
+                error "No such script: $name"
+                exit 1
+            else
+                continue
+            fi
         fi
 
         local pth=$(script_path $name)
 
         if [ ! -x $pth ]
         then
-            continue
+            if strict
+            then
+                error "Script not executable: $pth"
+                exit 1
+            else
+                continue
+            fi
         fi
 
         local output=$($pth)
@@ -79,7 +96,7 @@ function error {
 }
 
 function usage {
-    error "Usage: $0 <config>"
+    error "Usage: $0 <config> [--strict]"
 }
 
 if [ -z "$1" ]
@@ -93,6 +110,17 @@ then
     error "No such file: $1"
     usage
     exit 1
+fi
+
+if [ ! -z "$2" ]
+then
+    if [ "$2" == "--strict" ]
+    then
+        STRICT=1
+    else
+        usage
+        exit 1
+    fi
 fi
 
 build_status $1

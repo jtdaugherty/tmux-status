@@ -26,17 +26,20 @@ To use:
 
 Notes:
 
- * If a script named in $SCRIPTS does not exist, it will be quietly
-   omitted from the status bar.
+If a script named in $SCRIPTS does not exist, it will be quietly
+omitted from the status bar.  If a script in $SCRIPTS does exist but
+is not executable, it will be quietly omitted from the status bar.  If
+a script in $SCRIPTS exists and is executable but produces no output,
+it will be quietly omitted from the status bar.
 
- * If a script in $SCRIPTS does exist but is not executable, it will
-   be quietly omitted from the status bar.
+Otherwise, the output of the script will be added to the status bar
+and separators will be added as appropriate.
 
- * If a script in $SCRIPTS exists and is executable but produces no
-   output, it will be quietly omitted from the status bar.
+The main script, `tmux-status.sh`, can be run with the `--strict`
+argument to force the script to exit if it cannot find all and run of
+the named scripts in $SCRIPTS:
 
- * Otherwise, the output of the script will be added to the status bar
-   and separators will be added as appropriate.
+  tmux-config.sh ../config --strict
 
- * $PREFIX and $SUFFIX will only be added to the status bar if at
-   least one status bar entry ran successfully.
+$PREFIX and $SUFFIX will only be added to the status bar if at least
+one status bar entry ran successfully.
