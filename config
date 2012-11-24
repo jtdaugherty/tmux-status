@@ -1,5 +1,9 @@
 SEPARATOR="#[fg=white,bg=blue]/"
 DEFAULT_ITEM_ATTR="#[fg=cyan,bg=blue]"
-SCRIPTS="iTunes battery time"
 PREFIX="#[fg=white]{"
 SUFFIX="#[fg=white]}"
+
+SCRIPTS="iTunes battery weather time"
+
+# Script-specific settings need to be exported explicitly.
+export WEATHER_STATION="KORPORTL169"
