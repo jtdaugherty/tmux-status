@@ -15,10 +15,10 @@ then
     then
         C=green
     else
-        if [ $PERC > 40 ]
+        if [ $PERC -gt 40 ]
         then
             C=green
-        elif [ $PERC > 20 ]
+        elif [ $PERC -gt 20 ]
         then
             C=yellow
         else
