@@ -8,11 +8,13 @@ end tell
 if process_list contains "iTunes" then
   tell application "iTunes"
     if player state is playing then
-      set track_name to name of current track
-      set artist_name to artist of current track
-      #     set album_name to album of current track
-      set trim_length to 25
-      set now_playing to track_name
+      set trim_length to 40
+      set now_playing to current stream title
+
+      if length of now_playing is 0 then
+        set now_playing to name of current track
+      end if
+
       if length of now_playing is less than trim_length then
         set now_playing_trim to now_playing
       else
