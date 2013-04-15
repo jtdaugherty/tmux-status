@@ -10,6 +10,9 @@ if process_list contains "iTunes" then
     if player state is playing then
       set trim_length to 40
       set now_playing to current stream title
+      if now_playing is missing value then
+          set now_playing to name of current track as string
+      end if
 
       if length of now_playing is 0 then
         set now_playing to name of current track
