@@ -1,9 +1,9 @@
-SEPARATOR="#[fg=white,bg=blue]/"
-DEFAULT_ITEM_ATTR="#[fg=cyan,bg=blue]"
-PREFIX="#[fg=white]{"
-SUFFIX="#[fg=white]}"
+SEPARATOR=" » "
+DEFAULT_ITEM_ATTR="#[fg=black,bg=green]"
+PREFIX=""
+SUFFIX=""
 
-SCRIPTS="hostname iTunes battery weather time"
+SCRIPTS="iTunes battery weather time"
 
 # Script-specific settings need to be exported explicitly.
 export WEATHER_STATION="KORPORTL169"
