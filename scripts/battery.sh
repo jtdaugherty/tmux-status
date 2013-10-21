@@ -27,5 +27,5 @@ then
     fi
 
     A="#[fg=black,bg=${C}]"
-    echo "${A}${PERC}%"
+    echo "${A}🔋 ${PERC}%"
 fi
