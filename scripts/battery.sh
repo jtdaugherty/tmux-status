@@ -26,6 +26,9 @@ then
         fi
     fi
 
-    A="#[fg=black,bg=${C}]"
+    if [ -z "$USE_POWERLINE" ]
+    then
+        A="#[fg=black,bg=${C}]"
+    fi
     echo "${A}🔋 ${PERC}%"
 fi

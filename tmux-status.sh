@@ -31,8 +31,7 @@ function build_status {
     local status=""
 
     # For each status script specified in the configuration, run it
-    # and build up a status line.  A config is just a file with one
-    # script name per line (no suffix).
+    # and build up a status line.
     . $config
 
     for name in $SCRIPTS
@@ -75,12 +74,39 @@ function build_status {
 
         if [ ! -z "$status" ]
         then
-            status="${status}${SEPARATOR}"
+            status="${status}"
         else
             status="${DEFAULT_ITEM_ATTR}${PREFIX}"
         fi
 
-        status="${status}${DEFAULT_ITEM_ATTR}${output}"
+	fg_name="$(echo $name | tr a-z A-Z)_FG"
+	bg_name="$(echo $name | tr a-z A-Z)_BG"
+
+	fg="$(eval 'echo $'$fg_name)"
+	bg="$(eval 'echo $'$bg_name)"
+
+	if [ -z "$fg" ]
+	then
+	    fg=$DEFAULT_FG
+	fi
+	if [ -z "$bg" ]
+	then
+	    bg=$DEFAULT_BG
+	fi
+
+	item_attr="#[fg=$fg,bg=$bg]"
+	sep_item_attr="#[fg=$bg]"
+
+	if [ ! -z "$USE_POWERLINE" ]
+	then
+	    sep=" ${sep_item_attr}⮂"
+	else
+	    sep="#[fg=$DEFAULT_FG,bg=$DEFAULT_BG]${SEPARATOR}"
+	fi
+
+        status="${status}${sep}${item_attr} ${output}"
+
+	PREV_BG=$bg
     done
 
     if [ ! -z "$status" ]
@@ -122,5 +148,7 @@ then
         exit 1
     fi
 fi
+
+PREV_BG=$DEFAULT_FG
 
 build_status $1
