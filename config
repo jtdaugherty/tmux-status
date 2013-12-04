@@ -2,14 +2,14 @@ export USE_POWERLINE=1
 SEPARATOR=" < "
 
 DEFAULT_FG="black"
-DEFAULT_BG="green"
+DEFAULT_BG="blue"
 PREFIX=""
 SUFFIX=""
 
 SCRIPTS="iTunes battery weather"
 
 ITUNES_FG="white"
-ITUNES_BG="blue"
+ITUNES_BG="magenta"
 
 BATTERY_FG="white"
 BATTERY_BG="black"
