@@ -104,7 +104,13 @@ function build_status {
 	    sep="#[fg=$DEFAULT_FG,bg=$DEFAULT_BG]${SEPARATOR}"
 	fi
 
-        status="${status}${sep}${item_attr} ${output}"
+	if [ -z "${status}" ]
+	then
+            status="${item_attr}${output}"
+	else
+            status="${status}${sep}${item_attr}${output}"
+	fi
+
 
 	PREV_BG=$bg
     done

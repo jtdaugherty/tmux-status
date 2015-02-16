@@ -1,21 +1,21 @@
-export USE_POWERLINE=1
-SEPARATOR=" < "
+#export USE_POWERLINE=0
+SEPARATOR=" "
 
-DEFAULT_FG="black"
+DEFAULT_FG="white"
 DEFAULT_BG="blue"
 PREFIX=""
 SUFFIX=""
 
-SCRIPTS="iTunes battery weather"
+SCRIPTS="battery weather"
 
 ITUNES_FG="white"
 ITUNES_BG="magenta"
 
-BATTERY_FG="white"
-BATTERY_BG="black"
+# BATTERY_FG="white"
+# BATTERY_BG="black"
 
-WEATHER_FG="black"
-WEATHER_BG="white"
+# WEATHER_FG="black"
+# WEATHER_BG="white"
 
 # Script-specific settings need to be exported explicitly.
 export WEATHER_STATION="KORPORTL169"
