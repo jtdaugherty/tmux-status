@@ -79,8 +79,8 @@ function build_status {
             status="${DEFAULT_ITEM_ATTR}${PREFIX}"
         fi
 
-	fg_name="$(echo $name | tr a-z A-Z)_FG"
-	bg_name="$(echo $name | tr a-z A-Z)_BG"
+	fg_name="$(echo $name | tr a-z A-Z | tr \- _)_FG"
+	bg_name="$(echo $name | tr a-z A-Z | tr \- _)_BG"
 
 	fg="$(eval 'echo $'$fg_name)"
 	bg="$(eval 'echo $'$bg_name)"
@@ -99,12 +99,12 @@ function build_status {
 
 	if [ ! -z "$USE_POWERLINE" ]
 	then
-	    sep=" ${sep_item_attr}⮂"
+	    sep=" ${sep_item_attr}"
 	else
 	    sep="#[fg=$DEFAULT_FG,bg=$DEFAULT_BG]${SEPARATOR}"
 	fi
 
-	if [ -z "${status}" ]
+	if [ -z "${status}" ] && ! [ ! -z "$USE_POWERLINE" ]
 	then
             status="${item_attr}${output}"
 	else
@@ -120,7 +120,7 @@ function build_status {
         status="${status}${DEFAULT_ITEM_ATTR}${SUFFIX}"
     fi
 
-    echo $status
+    echo "$status"
 }
 
 function error {

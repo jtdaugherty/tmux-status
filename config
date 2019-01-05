@@ -1,12 +1,22 @@
 #export USE_POWERLINE=0
-SEPARATOR=" "
+export USE_POWERLINE=1
+SEPARATOR="!"
 
 DEFAULT_FG="white"
-DEFAULT_BG="blue"
+DEFAULT_BG="colour234"
 PREFIX=""
-SUFFIX=""
+SUFFIX=" "
 
-SCRIPTS="battery weather"
+BATTERY_FG="white"
+BATTERY_BG="colour235"
+
+WORK_MAIL_FG="black"
+WORK_MAIL_BG="colour75"
+
+PERSONAL_MAIL_FG="white"
+PERSONAL_MAIL_BG="colour24"
+
+SCRIPTS="work-mail personal-mail battery"
 
 ITUNES_FG="white"
 ITUNES_BG="magenta"

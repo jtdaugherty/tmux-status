@@ -4,6 +4,10 @@ function raw_data {
     ioreg -rc AppleSmartBattery
 }
 
+function power_connected {
+    raw_data | grep ExternalConnected | grep Yes >/dev/null
+}
+
 if raw_data | grep AppleSmartBattery >/dev/null
 then
     CURRENT=$(raw_data | grep "CurrentCapacity" | awk '{ print $3 }')
@@ -11,20 +15,10 @@ then
     PERC=$(( $CURRENT * 100 / $MAX ))
     CHARGING=$(raw_data | grep "IsCharging" | grep "Yes")
 
-    if [ ! -z "$CHARGING" ]
+    if [ $PERC -lt 95 ] || ! power_connected
     then
-        C=green
+        echo "🔋 ${PERC}%"
     else
-        if [ $PERC -gt 40 ]
-        then
-            C=green
-        elif [ $PERC -gt 20 ]
-        then
-            C=yellow
-        else
-            C=red
-        fi
+        echo "🔋 ${PERC}%"
     fi
-
-    echo "🔋 ${PERC}%"
 fi
