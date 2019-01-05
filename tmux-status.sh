@@ -96,21 +96,14 @@ function build_status {
 
 	item_attr="#[fg=$fg,bg=$bg]"
 	sep_item_attr="#[fg=$bg]"
+        sep="#[fg=$DEFAULT_FG,bg=$DEFAULT_BG]${SEPARATOR}"
 
-	if [ ! -z "$USE_POWERLINE" ]
-	then
-	    sep=" ${sep_item_attr}"
-	else
-	    sep="#[fg=$DEFAULT_FG,bg=$DEFAULT_BG]${SEPARATOR}"
-	fi
-
-	if [ -z "${status}" ] && ! [ ! -z "$USE_POWERLINE" ]
+	if [ -z "${status}" ]
 	then
             status="${item_attr}${output}"
 	else
             status="${status}${sep}${item_attr}${output}"
 	fi
-
 
 	PREV_BG=$bg
     done

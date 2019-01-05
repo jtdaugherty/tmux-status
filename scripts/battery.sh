@@ -17,8 +17,6 @@ then
 
     if [ $PERC -lt 95 ] || ! power_connected
     then
-        echo "🔋 ${PERC}%"
-    else
-        echo "🔋 ${PERC}%"
+        echo "🔋${PERC}%"
     fi
 fi

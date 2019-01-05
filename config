@@ -1,31 +1,16 @@
-#export USE_POWERLINE=0
-export USE_POWERLINE=1
-SEPARATOR="!"
-
 DEFAULT_FG="white"
-DEFAULT_BG="colour234"
+DEFAULT_BG="default"
 PREFIX=""
-SUFFIX=" "
-
-BATTERY_FG="white"
-BATTERY_BG="colour235"
+SUFFIX=""
 
 WORK_MAIL_FG="black"
 WORK_MAIL_BG="colour75"
 
-PERSONAL_MAIL_FG="white"
 PERSONAL_MAIL_BG="colour24"
 
 SCRIPTS="work-mail personal-mail battery"
 
-ITUNES_FG="white"
 ITUNES_BG="magenta"
-
-# BATTERY_FG="white"
-# BATTERY_BG="black"
-
-# WEATHER_FG="black"
-# WEATHER_BG="white"
 
 # Script-specific settings need to be exported explicitly.
 export WEATHER_STATION="KORPORTL169"
