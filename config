@@ -3,10 +3,8 @@ DEFAULT_BG="default"
 PREFIX=""
 SUFFIX=""
 
-WORK_MAIL_FG="black"
-WORK_MAIL_BG="colour75"
-
-PERSONAL_MAIL_BG="colour24"
+WORK_MAIL_FG="colour75"
+PERSONAL_MAIL_FG="colour24"
 
 SCRIPTS="work-mail personal-mail battery"
 
