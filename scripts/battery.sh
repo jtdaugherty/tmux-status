@@ -10,8 +10,8 @@ function power_connected {
 
 if raw_data | grep AppleSmartBattery >/dev/null
 then
-    CURRENT=$(raw_data | grep "CurrentCapacity" | awk '{ print $3 }')
-    MAX=$(raw_data | grep "MaxCapacity" | awk '{ print $3 }')
+    CURRENT=$(raw_data | grep -w "CurrentCapacity" | awk '{ print $3 }')
+    MAX=$(raw_data | grep -w "MaxCapacity" | awk '{ print $3 }')
     PERC=$(( $CURRENT * 100 / $MAX ))
     CHARGING=$(raw_data | grep "IsCharging" | grep "Yes")
 
