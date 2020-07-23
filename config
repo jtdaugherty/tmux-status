@@ -6,7 +6,9 @@ SUFFIX=""
 WORK_MAIL_FG="colour75"
 PERSONAL_MAIL_FG="colour24"
 
-SCRIPTS="work-mail personal-mail battery"
+DATE_FG="magenta"
+
+SCRIPTS="work-mail personal-mail battery date clock"
 
 ITUNES_BG="magenta"
 
