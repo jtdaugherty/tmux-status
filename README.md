@@ -23,8 +23,9 @@ To use:
   * `SEPARATOR` - the string inserted in between status bar entries.
 
 2) Update your `tmux.conf` to set `status-right` as follows:
-
-    set -g status-right '#(.../tmux-status/tmux-status.sh .../config)'
+```
+set -g status-right '#(.../tmux-status/tmux-status.sh .../config)'
+```
 
 Notes:
 
