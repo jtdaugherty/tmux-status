@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# print first listed non-localhost IP address
+
+# Display first listed non-localhost IP address
+# Platform: any
+
 ifconfig | \
 grep 'inet ' | \
 grep -v 127.0.0.1 | \

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Display the unread message count for the Inbox as well as folders for
+# a Maildir mailbox.
+# Platform: any
+
 set -e
 
 ROOT=~/mail/gmail-galois

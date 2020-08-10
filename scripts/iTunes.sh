@@ -1,5 +1,7 @@
 #!/usr/bin/env osascript
-# Returns the current playing song in iTunes for OSX
+
+# Display the current playing song in iTunes for OSX.
+# Platform: MacOS
 
 tell application "System Events"
   set process_list to (name of every process)

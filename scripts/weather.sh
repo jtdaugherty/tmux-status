@@ -1,4 +1,7 @@
 
+# Display the current temperature.
+# Platform: any with curl
+
 URL="http://api.wunderground.com/weatherstation/WXCurrentObXML.asp?ID="
 
 if [ ! -z "$WEATHER_STATION" ]

@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Query the system battery and charging status and display a battery
+# charge percentage.
+#
+# Platform: MacOS
+
 function raw_data {
     ioreg -rc AppleSmartBattery
 }

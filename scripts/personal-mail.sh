@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Display the unread message count for a Maildir mailbox.
+# Platform: any
+
 set -e
 
 MAIL=~/mail/pobox/new
