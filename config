@@ -3,7 +3,8 @@ DEFAULT_BG="default"
 PREFIX=""
 SUFFIX=""
 
-WORK_MAIL_FG="colour75"
+# WORK_MAIL_FG="colour75"
+WORK_MAIL_FG="colour24"
 PERSONAL_MAIL_FG="colour24"
 
 DATE_FG="magenta"
