@@ -12,8 +12,7 @@ HIGHLIGHT_FG="colour75"
 DEFAULT_FG="colour24"
 
 function highlight {
-    local s=$1
-    echo "#[fg=$HIGHLIGHT_FG]$s#[fg=$DEFAULT_FG]"
+    echo "#[fg=$HIGHLIGHT_FG]$*#[fg=$DEFAULT_FG]"
 }
 
 s=""
@@ -27,7 +26,7 @@ fi
 
 if [ $N -gt 0 ]
 then
-    echo "($(highlight 'p:') $N)"
+    echo "($(highlight p:$N))"
 else
-    echo "(p: $N)"
+    echo "(p:$N)"
 fi
