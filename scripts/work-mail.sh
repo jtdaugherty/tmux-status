@@ -43,8 +43,8 @@ if [ ! -z "$s" ]
 then
     if [ $INBOX_N -gt 0 ] || [ $OTHER_N -gt 0 ]
     then
-        echo "($(highlight 'g:')$s)"
+        echo "$(highlight 'g:')$s |"
     else
-        echo "(g:$s)"
+        echo "g:$s |"
     fi
 fi
