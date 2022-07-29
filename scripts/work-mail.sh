@@ -34,7 +34,7 @@ then
     then
         s="0"
     fi
-    s="$s, $(highlight $OTHER_N)"
+    s="$s,$(highlight $OTHER_N)"
 else
     s="$s,0"
 fi
