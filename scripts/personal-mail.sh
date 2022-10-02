@@ -27,6 +27,4 @@ fi
 if [ $N -gt 0 ]
 then
     echo "$(highlight p:$N) |"
-else
-    echo "p:$N |"
 fi
